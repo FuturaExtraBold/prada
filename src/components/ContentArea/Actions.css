@@ -1,0 +1,21 @@
+.actions {
+  position: absolute;
+  bottom: 22px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions__container {
+  display: flex;
+}
+
+.actions__button {
+  width: auto;
+  height: 79px;
+}
+
+.actions__button-image {
+  height: 100%;
+}
