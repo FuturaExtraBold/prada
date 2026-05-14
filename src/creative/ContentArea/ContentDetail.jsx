@@ -3,7 +3,6 @@ import "./ContentArea.css";
 import logoImage from "../../assets/images/lockup/lockup.png";
 import releaseImage from "../../assets/images/lockup/now-playing-theaters.png";
 import PreviewFrame from "../PreviewFrame/PreviewFrame";
-import Actions from "./Actions";
 
 export default function ContentDetail() {
   return (
@@ -20,7 +19,6 @@ export default function ContentDetail() {
         alt="Now Playing in Theaters"
         aria-hidden="true"
       />
-      <Actions />
     </section>
   );
 }

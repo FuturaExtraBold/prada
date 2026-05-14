@@ -17,14 +17,8 @@ import Lockup from "./Lockup";
 import Pagination from "./Pagination";
 
 const images = [
-  gallery01,
-  gallery02,
-  gallery03,
-  gallery04,
-  gallery05,
-  gallery06,
-  gallery07,
-  gallery08,
+  gallery01, gallery02, gallery03, gallery04,
+  gallery05, gallery06, gallery07, gallery08,
 ];
 
 export default function Gallery({ type }) {
@@ -42,35 +36,31 @@ export default function Gallery({ type }) {
 
   return (
     <div className="gallery">
-      <CloseButton />
-
-      <div className="gallery__frame">
-        <div className="gallery__content">
-          {type === "image" ? (
-            <img
-              className="gallery__image"
-              src={images[currentIndex]}
-              alt={`Gallery image ${currentIndex + 1}`}
-            />
-          ) : (
-            <div className="gallery__video-stub">Video — stub</div>
-          )}
+      <div className="gallery__unit">
+        <div className="gallery__frame">
+          <div className="gallery__content">
+            {type === "image" ? (
+              <img
+                className="gallery__image"
+                src={images[currentIndex]}
+                alt={`Gallery image ${currentIndex + 1}`}
+              />
+            ) : (
+              <div className="gallery__video-stub">Video — stub</div>
+            )}
+          </div>
+          <img
+            className="gallery__frame-overlay"
+            src={frameRed}
+            alt=""
+            aria-hidden="true"
+          />
+          <Arrows onPrev={handlePrev} onNext={handleNext} />
+          <Pagination count={count} current={currentIndex} onChange={setCurrentIndex} />
+          <CloseButton />
         </div>
-        <img
-          className="gallery__frame-overlay"
-          src={frameRed}
-          alt=""
-          aria-hidden="true"
-        />
-        <Arrows onPrev={handlePrev} onNext={handleNext} />
+        <Lockup />
       </div>
-
-      <Pagination
-        count={count}
-        current={currentIndex}
-        onChange={setCurrentIndex}
-      />
-      <Lockup />
     </div>
   );
 }

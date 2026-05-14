@@ -1,7 +1,7 @@
 import "./Pagination.css";
 
-import pagActive from "../../assets/images/ui/pag-dot-active.png";
-import pagInert from "../../assets/images/ui/pag-dot-inert.png";
+import pagActive from "../../assets/images/ui/pagination-active.png";
+import pagInert from "../../assets/images/ui/pagination-inert.png";
 import ActionButton from "../ActionButton/ActionButton";
 
 export default function Pagination({ count, current, onChange }) {

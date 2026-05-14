@@ -3,3 +3,17 @@
   z-index: 50;
   inset: 0;
 }
+
+.gallery-overlay__background {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  width: 1920px;
+  height: 1500px;
+  background-image: url("../../assets/images/layout/layout-gallery.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  transform: translateX(-50%);
+}

@@ -1,7 +1,19 @@
 .pagination {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 8px;
+  padding-bottom: 8px;
   gap: 0;
+}
+
+.pagination .action-button {
+  width: 32px;
+  height: 32px;
+}
+
+.pagination .action-button__image {
+  width: 100%;
+  height: 100%;
 }

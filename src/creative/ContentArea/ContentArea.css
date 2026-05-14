@@ -16,6 +16,7 @@
   display: block;
   width: 1920px;
   height: 1500px;
+  background-image: url("../../assets/images/layout/layout.jpg");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;

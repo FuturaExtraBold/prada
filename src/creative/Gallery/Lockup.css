@@ -1,5 +1,17 @@
 .gallery-lockup {
   display: flex;
-  justify-content: center;
-  margin-top: 8px;
+  width: 870px;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.gallery-lockup__logo {
+  width: 125px;
+  height: 90px;
+}
+
+.gallery-lockup__now-playing {
+  width: 237px;
+  height: 69px;
 }

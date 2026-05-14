@@ -1,21 +1,18 @@
 .actions {
   position: absolute;
+  right: 0;
   bottom: 22px;
+  left: 0;
   display: flex;
   width: 100%;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  pointer-events: none;
 }
 
 .actions__container {
   display: flex;
-}
-
-.actions__button {
-  width: auto;
-  height: 79px;
-}
-
-.actions__button-image {
-  height: 100%;
+  width: 494px;
+  justify-content: center;
+  margin-right: 54px;
+  pointer-events: all;
 }

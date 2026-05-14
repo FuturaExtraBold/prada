@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run lint && npm run format && npm run stylelint && vite",
+    "dev": "npm run lint:fix && npm run format && npm run stylelint:fix && vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src",

@@ -1,0 +1,14 @@
+.actions-layer {
+  position: absolute;
+  z-index: 70;
+  inset: 0;
+  pointer-events: none;
+}
+
+.actions-layer__inner {
+  position: relative;
+  width: var(--workable-width);
+  height: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+}
