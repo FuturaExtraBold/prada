@@ -1,13 +1,28 @@
-import BigGreyBox from "./components/BigGreyBox/BigGreyBox";
-import ContentArea from "./components/ContentArea/ContentArea";
-import Header from "./components/Header/Header";
+import BigGreyBox from "./chrome/BigGreyBox/BigGreyBox";
+import Header from "./chrome/Header/Header";
+import { UIProvider, useUI } from "./context/UIContext";
+import ContentArea from "./creative/ContentArea/ContentArea";
+import GalleryOverlay from "./creative/GalleryOverlay/GalleryOverlay";
+import VideoOverlay from "./creative/VideoOverlay/VideoOverlay";
 
-export default function App() {
+function AppInner() {
+  const { activeOverlay } = useUI();
+
   return (
     <main className="app">
       <Header />
       <ContentArea />
       <BigGreyBox />
+      {activeOverlay === "video" && <VideoOverlay />}
+      {activeOverlay === "gallery" && <GalleryOverlay />}
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <UIProvider>
+      <AppInner />
+    </UIProvider>
   );
 }

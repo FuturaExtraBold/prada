@@ -1,5 +1,6 @@
-import imagePoster from "../../assets/images/lockup/poster.jpg";
 import "./PreviewFrame.css";
+
+import imagePoster from "../../assets/images/lockup/poster.jpg";
 
 export default function PreviewFrame() {
   return (

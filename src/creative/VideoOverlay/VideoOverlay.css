@@ -1,0 +1,5 @@
+.video-overlay {
+  position: absolute;
+  z-index: 50;
+  inset: 0;
+}

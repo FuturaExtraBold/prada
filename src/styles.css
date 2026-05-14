@@ -6,10 +6,7 @@
   --workable-width: 970px;
   --workable-height: 648px;
   --big-grey-box-width: 1280px;
-  --big-grey-box-height: max(
-    0px,
-    calc(100vh - var(--header-height) - var(--content-height))
-  );
+  --big-grey-box-height: 1200px;
   --big-grey-box-background: rgb(31 31 31);
 
   background: var(--page-background);

@@ -1,0 +1,14 @@
+.arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow--prev {
+  left: 0;
+}
+
+.arrow--next {
+  right: 0;
+}

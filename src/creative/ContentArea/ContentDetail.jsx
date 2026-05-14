@@ -1,8 +1,9 @@
+import "./ContentArea.css";
+
 import logoImage from "../../assets/images/lockup/lockup.png";
 import releaseImage from "../../assets/images/lockup/now-playing-theaters.png";
-import Actions from "./Actions";
 import PreviewFrame from "../PreviewFrame/PreviewFrame";
-import "./ContentArea.css";
+import Actions from "./Actions";
 
 export default function ContentDetail() {
   return (
