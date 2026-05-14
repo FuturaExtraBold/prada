@@ -1,20 +1,17 @@
 import "./Pagination.css";
 
-import pagActive from "../../assets/images/ui/pagination-active.png";
-import pagInert from "../../assets/images/ui/pagination-inert.png";
-import ActionButton from "../ActionButton/ActionButton";
-
 export default function Pagination({ count, current, onChange }) {
   return (
     <div className="pagination">
       {Array.from({ length: count }, (_, i) => (
-        <ActionButton
+        <button
           key={i}
-          imgOut={i === current ? pagActive : pagInert}
-          imgOver={i === current ? pagActive : pagInert}
-          alt={`Go to slide ${i + 1}`}
+          className={`pagination__dot${i === current ? " pagination__dot--active" : ""}`}
           onClick={() => onChange(i)}
-        />
+          aria-label={`Go to slide ${i + 1}`}
+        >
+          <span className="pagination__dot-visual" />
+        </button>
       ))}
     </div>
   );

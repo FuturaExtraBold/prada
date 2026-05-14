@@ -1,6 +1,6 @@
 .actions-layer {
   position: absolute;
-  z-index: 70;
+  z-index: var(--z-actions);
   inset: 0;
   pointer-events: none;
 }

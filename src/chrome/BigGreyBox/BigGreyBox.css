@@ -1,6 +1,6 @@
 .big-grey-box {
   position: relative;
-  z-index: 100;
+  z-index: var(--z-chrome);
   display: flex;
   width: 100%;
   justify-content: center;

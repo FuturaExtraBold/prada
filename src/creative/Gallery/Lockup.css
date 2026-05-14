@@ -1,6 +1,6 @@
 .gallery-lockup {
   display: flex;
-  width: 870px;
+  width: var(--gallery-frame-width);
   flex-direction: row;
   align-items: center;
   margin-top: 16px;

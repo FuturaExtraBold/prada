@@ -10,15 +10,20 @@ import gallery05 from "../../assets/images/gallery/gallery-05.jpg";
 import gallery06 from "../../assets/images/gallery/gallery-06.jpg";
 import gallery07 from "../../assets/images/gallery/gallery-07.jpg";
 import gallery08 from "../../assets/images/gallery/gallery-08.jpg";
-import frameRed from "../../assets/images/ui/frame-red.png";
 import Arrows from "./Arrows";
 import CloseButton from "./CloseButton";
 import Lockup from "./Lockup";
 import Pagination from "./Pagination";
 
 const images = [
-  gallery01, gallery02, gallery03, gallery04,
-  gallery05, gallery06, gallery07, gallery08,
+  gallery01,
+  gallery02,
+  gallery03,
+  gallery04,
+  gallery05,
+  gallery06,
+  gallery07,
+  gallery08,
 ];
 
 export default function Gallery({ type }) {
@@ -49,14 +54,12 @@ export default function Gallery({ type }) {
               <div className="gallery__video-stub">Video — stub</div>
             )}
           </div>
-          <img
-            className="gallery__frame-overlay"
-            src={frameRed}
-            alt=""
-            aria-hidden="true"
-          />
           <Arrows onPrev={handlePrev} onNext={handleNext} />
-          <Pagination count={count} current={currentIndex} onChange={setCurrentIndex} />
+          <Pagination
+            count={count}
+            current={currentIndex}
+            onChange={setCurrentIndex}
+          />
           <CloseButton />
         </div>
         <Lockup />

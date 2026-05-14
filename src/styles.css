@@ -9,8 +9,31 @@
   --big-grey-box-height: 1200px;
   --big-grey-box-background: rgb(31 31 31);
 
+  /* Brand colors */
+  --color-prada: #e8002d;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-dark-text: #111111;
+
+  /* Transitions */
+  --transition-speed: 0.2s;
+
+  /* Z-index scale */
+  --z-chrome: 100;
+  --z-actions: 70;
+  --z-overlay: 50;
+  --z-unit: 1;
+
+  /* Shared layout */
+  --bg-width: 1920px;
+  --bg-height: 1500px;
+  --bg-offset-top: -55px;
+  --content-margin-right: 54px;
+  --gallery-frame-width: 870px;
+  --gallery-margin-top: 37px;
+
   background: var(--page-background);
-  color: #111111;
+  color: var(--color-dark-text);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

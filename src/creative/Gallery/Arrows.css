@@ -1,14 +1,47 @@
 .arrow {
   position: absolute;
-  z-index: 1;
+  z-index: var(--z-unit);
   top: 50%;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-50%);
 }
 
 .arrow--prev {
-  left: 0;
+  left: 20px;
 }
 
 .arrow--next {
-  right: 0;
+  right: 20px;
+}
+
+.arrow--prev .arrow__triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 34px solid var(--color-prada);
+  border-bottom: 20px solid transparent;
+  transition: border-color var(--transition-speed);
+}
+
+.arrow--next .arrow__triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 34px solid var(--color-prada);
+  transition: border-color var(--transition-speed);
+}
+
+.arrow--prev:hover .arrow__triangle {
+  border-right-color: var(--color-light);
+}
+
+.arrow--next:hover .arrow__triangle {
+  border-left-color: var(--color-light);
 }

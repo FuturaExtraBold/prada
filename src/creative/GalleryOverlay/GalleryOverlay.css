@@ -1,15 +1,15 @@
 .gallery-overlay {
   position: absolute;
-  z-index: 50;
+  z-index: var(--z-overlay);
   inset: 0;
 }
 
 .gallery-overlay__background {
   position: absolute;
-  top: -55px;
+  top: var(--bg-offset-top);
   left: 50%;
-  width: 1920px;
-  height: 1500px;
+  width: var(--bg-width);
+  height: var(--bg-height);
   background-image: url("../../assets/images/layout/layout-gallery.jpg");
   background-position: top center;
   background-repeat: no-repeat;

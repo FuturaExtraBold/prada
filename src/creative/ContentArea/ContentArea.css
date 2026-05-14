@@ -11,11 +11,11 @@
 .content-area__background {
   position: absolute;
   z-index: 0;
-  top: -55px;
+  top: var(--bg-offset-top);
   left: 50%;
   display: block;
-  width: 1920px;
-  height: 1500px;
+  width: var(--bg-width);
+  height: var(--bg-height);
   background-image: url("../../assets/images/layout/layout.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 54px;
+  margin-right: var(--content-margin-right);
   gap: 2px;
 
   /* background-color: rebeccapurple; */

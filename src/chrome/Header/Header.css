@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 100;
+  z-index: var(--z-chrome);
   width: 100%;
   height: var(--header-height);
   background: var(--header-background);
