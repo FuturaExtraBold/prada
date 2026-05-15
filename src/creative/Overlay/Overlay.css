@@ -1,10 +1,10 @@
-.gallery-overlay {
+.overlay {
   position: absolute;
   z-index: var(--z-overlay);
   inset: 0;
 }
 
-.gallery-overlay__background {
+.overlay__background {
   position: absolute;
   top: var(--bg-offset-top);
   left: 50%;

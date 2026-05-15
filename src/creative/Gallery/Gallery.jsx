@@ -29,7 +29,8 @@ const images = [
 export default function Gallery({ type }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const count = type === "image" ? images.length : 1;
+  const isVideo = type === "video";
+  const count = isVideo ? 1 : images.length;
 
   function handlePrev() {
     setCurrentIndex((i) => (i - 1 + count) % count);
@@ -43,17 +44,17 @@ export default function Gallery({ type }) {
     <div className="gallery">
       <div className="gallery__unit">
         <div
-          className={`gallery__frame${type === "video" ? " gallery__frame--video" : ""}`}
+          className={`gallery__frame${isVideo ? " gallery__frame--video" : ""}`}
         >
           <div className="gallery__content">
-            {type === "image" ? (
+            {isVideo ? (
+              <div className="gallery__video-stub">Video — stub</div>
+            ) : (
               <img
                 className="gallery__image"
                 src={images[currentIndex]}
                 alt={`Gallery image ${currentIndex + 1}`}
               />
-            ) : (
-              <div className="gallery__video-stub">Video — stub</div>
             )}
           </div>
           <Arrows onPrev={handlePrev} onNext={handleNext} />

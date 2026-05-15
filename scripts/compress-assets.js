@@ -8,7 +8,7 @@ const ROOT = path.resolve(__dirname, "..");
 const SRC = path.join(ROOT, "src/assets/images");
 const OUT = path.join(ROOT, "src/assets/images-compressed");
 const MANIFEST_PATH = path.join(OUT, ".manifest.json");
-const QUALITY = 60;
+const QUALITY = 80;
 
 function loadManifest() {
   try {

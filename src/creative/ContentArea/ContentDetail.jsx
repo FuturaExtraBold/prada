@@ -1,4 +1,4 @@
-import "./ContentArea.css";
+import "./ContentDetail.css";
 
 import logoImage from "../../assets/images-compressed/lockup.webp";
 import { NowPlayingTagline } from "../../lib/svgs";

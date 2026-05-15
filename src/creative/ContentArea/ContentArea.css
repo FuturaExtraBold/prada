@@ -32,29 +32,3 @@
   height: var(--workable-height);
   justify-content: flex-end;
 }
-
-.content-detail {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: var(--content-margin-right);
-  gap: 2px;
-}
-
-.content-detail__logo {
-  width: 238px;
-  margin: 20px 0;
-}
-
-.content-detail__release-window {
-  display: flex;
-  height: 16px;
-  justify-content: center;
-}
-
-.content-detail__release-window svg {
-  display: block;
-  width: auto;
-  height: 100%;
-}

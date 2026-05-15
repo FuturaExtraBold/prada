@@ -1,6 +1,6 @@
 import "./ActionsLayer.css";
 
-import Actions from "../ContentArea/Actions";
+import Actions from "./Actions";
 
 export default function ActionsLayer() {
   return (
