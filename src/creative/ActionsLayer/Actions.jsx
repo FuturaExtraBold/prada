@@ -1,17 +1,19 @@
 import "./Actions.css";
 
+import { forwardRef } from "react";
+
 import { useUI } from "../../context/UIContext";
 import { GalleryText, GetTicketsText, VideoText } from "../../lib/svgs";
 
 const FANDANGO_URL =
   "https://www.fandango.com/the-devil-wears-prada-2-2026-243909/movie-overview";
 
-export default function Actions() {
+const Actions = forwardRef(function Actions(_props, ref) {
   const { setActiveOverlay } = useUI();
 
   return (
     <section className="actions">
-      <div className="actions__container">
+      <div ref={ref} className="actions__container">
         <button
           className="action-btn"
           aria-label="Watch video"
@@ -36,4 +38,6 @@ export default function Actions() {
       </div>
     </section>
   );
-}
+});
+
+export default Actions;

@@ -25,6 +25,8 @@ App
 ## State
 Single context (`UIContext`): `activeOverlay: null | "video" | "gallery"`. Controls which overlay renders.
 
+`Overlay` receives `type={activeOverlay}` and passes it straight to `Gallery`. Inside `Gallery`, the branch is `type === "video"` — everything else renders the image slideshow. So `"gallery"` → images, `"video"` → stub.
+
 ## CSS Conventions
 - **BEM** enforced by stylelint — `block__element--modifier`
 - All colors, transitions, z-indexes, and layout dimensions live in `:root` in `src/styles.css`
