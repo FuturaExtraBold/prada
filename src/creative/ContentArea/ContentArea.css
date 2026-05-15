@@ -16,7 +16,7 @@
   display: block;
   width: var(--bg-width);
   height: var(--bg-height);
-  background-image: url("../../assets/images/layout/layout.jpg");
+  background-image: url("../../assets/images-compressed/layout/layout.webp");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -31,8 +31,6 @@
   width: min(100%, var(--workable-width));
   height: var(--workable-height);
   justify-content: flex-end;
-
-  /* background-color: rgba(255, 0, 0, 0.1); */
 }
 
 .content-detail {
@@ -42,12 +40,11 @@
   align-items: center;
   margin-right: var(--content-margin-right);
   gap: 2px;
-
-  /* background-color: rebeccapurple; */
 }
 
 .content-detail__logo {
-  width: 306px;
+  width: 238px;
+  margin: 20px 0 6px;
 }
 
 .content-detail__release-window {

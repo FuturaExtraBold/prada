@@ -2,14 +2,14 @@ import "./Gallery.css";
 
 import { useState } from "react";
 
-import gallery01 from "../../assets/images/gallery/gallery-01.jpg";
-import gallery02 from "../../assets/images/gallery/gallery-02.jpg";
-import gallery03 from "../../assets/images/gallery/gallery-03.jpg";
-import gallery04 from "../../assets/images/gallery/gallery-04.jpg";
-import gallery05 from "../../assets/images/gallery/gallery-05.jpg";
-import gallery06 from "../../assets/images/gallery/gallery-06.jpg";
-import gallery07 from "../../assets/images/gallery/gallery-07.jpg";
-import gallery08 from "../../assets/images/gallery/gallery-08.jpg";
+import gallery01 from "../../assets/images-compressed/gallery/gallery-01.webp";
+import gallery02 from "../../assets/images-compressed/gallery/gallery-02.webp";
+import gallery03 from "../../assets/images-compressed/gallery/gallery-03.webp";
+import gallery04 from "../../assets/images-compressed/gallery/gallery-04.webp";
+import gallery05 from "../../assets/images-compressed/gallery/gallery-05.webp";
+import gallery06 from "../../assets/images-compressed/gallery/gallery-06.webp";
+import gallery07 from "../../assets/images-compressed/gallery/gallery-07.webp";
+import gallery08 from "../../assets/images-compressed/gallery/gallery-08.webp";
 import Arrows from "./Arrows";
 import CloseButton from "./CloseButton";
 import Lockup from "./Lockup";

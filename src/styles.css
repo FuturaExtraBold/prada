@@ -10,7 +10,7 @@
   --big-grey-box-background: rgb(31 31 31);
 
   /* Brand colors */
-  --color-prada: #e8002d;
+  --color-prada: #cb2c30;
   --color-dark: #000000;
   --color-light: #ffffff;
   --color-dark-text: #111111;
@@ -29,7 +29,8 @@
   --bg-height: 1500px;
   --bg-offset-top: -55px;
   --content-margin-right: 54px;
-  --gallery-frame-width: 870px;
+  --gallery-frame-width: 866px;
+  --gallery-frame-height: 488px;
   --gallery-margin-top: 37px;
 
   background: var(--page-background);

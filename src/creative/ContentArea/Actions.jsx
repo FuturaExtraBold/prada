@@ -14,18 +14,21 @@ export default function Actions() {
       <div className="actions__container">
         <button
           className="action-btn"
+          aria-label="Watch video"
           onClick={() => setActiveOverlay("video")}
         >
           <VideoText />
         </button>
         <button
           className="action-btn"
+          aria-label="View gallery"
           onClick={() => setActiveOverlay("gallery")}
         >
           <GalleryText />
         </button>
         <button
           className="action-btn"
+          aria-label="Get tickets on Fandango"
           onClick={() => window.open(FANDANGO_URL, "_blank")}
         >
           <GetTicketsText />

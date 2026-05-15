@@ -7,7 +7,11 @@ export default function CloseButton() {
   const { setActiveOverlay } = useUI();
 
   return (
-    <button className="close-button" onClick={() => setActiveOverlay(null)}>
+    <button
+      className="close-button"
+      aria-label="Close"
+      onClick={() => setActiveOverlay(null)}
+    >
       <CloseX />
     </button>
   );

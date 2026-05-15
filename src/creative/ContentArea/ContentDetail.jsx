@@ -1,7 +1,7 @@
 import "./ContentArea.css";
 
-import logoImage from "../../assets/images/lockup/lockup.png";
-import releaseImage from "../../assets/images/lockup/now-playing-theaters.png";
+import logoImage from "../../assets/images-compressed/lockup/lockup.webp";
+import releaseImage from "../../assets/images-compressed/lockup/now-playing-theaters.webp";
 import PreviewFrame from "../PreviewFrame/PreviewFrame";
 
 export default function ContentDetail() {

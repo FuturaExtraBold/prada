@@ -1,5 +1,6 @@
 node_modules/
 dist/
+src/assets/images-compressed/
 .DS_Store
 *.local
 .env

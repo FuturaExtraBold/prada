@@ -4,6 +4,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: 16px;
+  gap: 6px;
 }
 
 .gallery-lockup__logo {

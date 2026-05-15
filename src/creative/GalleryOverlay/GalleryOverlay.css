@@ -10,7 +10,7 @@
   left: 50%;
   width: var(--bg-width);
   height: var(--bg-height);
-  background-image: url("../../assets/images/layout/layout-gallery.jpg");
+  background-image: url("../../assets/images-compressed/layout/layout-gallery.webp");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
