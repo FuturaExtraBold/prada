@@ -42,7 +42,9 @@ export default function Gallery({ type }) {
   return (
     <div className="gallery">
       <div className="gallery__unit">
-        <div className="gallery__frame">
+        <div
+          className={`gallery__frame${type === "video" ? " gallery__frame--video" : ""}`}
+        >
           <div className="gallery__content">
             {type === "image" ? (
               <img

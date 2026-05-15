@@ -1,7 +1,7 @@
 import "./CloseButton.css";
 
 import { useUI } from "../../context/UIContext";
-import { CloseX } from "../../lib/buttonTexts";
+import { CloseX } from "../../lib/svgs";
 
 export default function CloseButton() {
   const { setActiveOverlay } = useUI();

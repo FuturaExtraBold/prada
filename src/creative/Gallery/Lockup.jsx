@@ -1,7 +1,7 @@
 import "./Lockup.css";
 
-import lockup from "../../assets/images-compressed/lockup/lockup.webp";
-import nowPlaying from "../../assets/images-compressed/lockup/now-playing.webp";
+import lockup from "../../assets/images-compressed/lockup.webp";
+import { NowPlayingText } from "../../lib/svgs";
 
 export default function Lockup() {
   return (
@@ -11,11 +11,9 @@ export default function Lockup() {
         src={lockup}
         alt="The Devil Wears Prada 2"
       />
-      <img
-        className="gallery-lockup__now-playing"
-        src={nowPlaying}
-        alt="Now Playing in Theaters"
-      />
+      <div className="gallery-lockup__now-playing">
+        <NowPlayingText aria-label="Now Playing in Theaters" />
+      </div>
     </div>
   );
 }

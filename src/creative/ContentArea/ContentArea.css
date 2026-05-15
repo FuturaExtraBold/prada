@@ -16,7 +16,7 @@
   display: block;
   width: var(--bg-width);
   height: var(--bg-height);
-  background-image: url("../../assets/images-compressed/layout/layout.webp");
+  background-image: url("../../assets/images-compressed/layout.webp");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -44,9 +44,17 @@
 
 .content-detail__logo {
   width: 238px;
-  margin: 20px 0 6px;
+  margin: 20px 0;
 }
 
 .content-detail__release-window {
-  width: 394px;
+  display: flex;
+  height: 16px;
+  justify-content: center;
+}
+
+.content-detail__release-window svg {
+  display: block;
+  width: auto;
+  height: 100%;
 }

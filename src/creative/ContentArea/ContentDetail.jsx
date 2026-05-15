@@ -1,7 +1,7 @@
 import "./ContentArea.css";
 
-import logoImage from "../../assets/images-compressed/lockup/lockup.webp";
-import releaseImage from "../../assets/images-compressed/lockup/now-playing-theaters.webp";
+import logoImage from "../../assets/images-compressed/lockup.webp";
+import { NowPlayingTagline } from "../../lib/svgs";
 import PreviewFrame from "../PreviewFrame/PreviewFrame";
 
 export default function ContentDetail() {
@@ -13,12 +13,9 @@ export default function ContentDetail() {
         src={logoImage}
         alt="The Devil Wears Prada 2 Logo"
       />
-      <img
-        className="content-detail__release-window"
-        src={releaseImage}
-        alt="Now Playing in Theaters"
-        aria-hidden="true"
-      />
+      <div className="content-detail__release-window">
+        <NowPlayingTagline aria-label="Now Playing Only in Theaters" />
+      </div>
     </section>
   );
 }

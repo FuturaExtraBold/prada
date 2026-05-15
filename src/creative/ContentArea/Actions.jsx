@@ -1,7 +1,7 @@
 import "./Actions.css";
 
 import { useUI } from "../../context/UIContext";
-import { GalleryText, GetTicketsText, VideoText } from "../../lib/buttonTexts";
+import { GalleryText, GetTicketsText, VideoText } from "../../lib/svgs";
 
 const FANDANGO_URL =
   "https://www.fandango.com/the-devil-wears-prada-2-2026-243909/movie-overview";

@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: 16px;
-  gap: 6px;
+  gap: 10px;
 }
 
 .gallery-lockup__logo {
@@ -13,6 +13,12 @@
 }
 
 .gallery-lockup__now-playing {
-  width: 237px;
-  height: 69px;
+  display: flex;
+  height: 42px;
+}
+
+.gallery-lockup__now-playing svg {
+  display: block;
+  width: auto;
+  height: 100%;
 }
