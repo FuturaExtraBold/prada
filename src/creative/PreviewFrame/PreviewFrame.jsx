@@ -42,6 +42,7 @@ const PreviewFrame = forwardRef(function PreviewFrame(_props, ref) {
         muted
         loop
         playsInline
+        preload="none"
       />
       <img
         className="preview-frame__icon"

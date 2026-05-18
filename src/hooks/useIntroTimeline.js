@@ -30,13 +30,17 @@ export default function useIntroTimeline({
           "-=1.3",
         );
 
-      if (replayKey === 0) {
+      if (replayKey === 1) {
         tl.fromTo(
           actionsRef.current.children,
           { y: 20, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8, stagger: 0.1 },
           "-=1.8",
         );
+      } else if (replayKey > 1) {
+        gsap.set(actionsRef.current.children, { y: 0, opacity: 1 });
+      } else {
+        gsap.set(actionsRef.current.children, { opacity: 0 });
       }
     });
 

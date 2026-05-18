@@ -52,6 +52,7 @@ export default function TallAd() {
         src={videoSrc}
         muted
         playsInline
+        preload="none"
         onEnded={handleVideoEnd}
         style={{ opacity: videoVisible ? 1 : 0 }}
       />
