@@ -16,7 +16,9 @@ const ContentArea = forwardRef(function ContentArea(
         src={layoutImage}
         alt=""
         aria-hidden="true"
-        fetchpriority="high"
+        width="1920"
+        height="1500"
+        fetchPriority="high"
       />
       <div className="content-area__workable">
         <ContentDetail

@@ -18,8 +18,8 @@ const ContentDetail = forwardRef(function ContentDetail(
         className="content-detail__logo"
         src={logoImage}
         alt="The Devil Wears Prada 2 Logo"
-        width="125"
-        height="90"
+        width="238"
+        height="171"
       />
       <div ref={nowPlayingRef} className="content-detail__release-window">
         <NowPlayingTagline aria-label="Now Playing Only in Theaters" />
