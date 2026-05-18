@@ -2,6 +2,7 @@ import "./Actions.css";
 
 import { forwardRef } from "react";
 
+import ActionButton from "../../components/ActionButton/ActionButton";
 import { useUI } from "../../context/UIContext";
 import useButtonShimmer from "../../hooks/useButtonShimmer";
 import { GalleryText, GetTicketsText, VideoText } from "../../lib/svgs";
@@ -17,30 +18,24 @@ const Actions = forwardRef(function Actions(_props, ref) {
   return (
     <section className="actions">
       <div ref={ref} className="actions__container">
-        <button
-          className="action-btn"
-          aria-label="Watch video"
+        <ActionButton
+          ariaLabel="Watch video"
           onClick={() => setActiveOverlay("video")}
         >
           <VideoText />
-          <span className="action-btn__shimmer" aria-hidden="true" />
-        </button>
-        <button
-          className="action-btn"
-          aria-label="View gallery"
+        </ActionButton>
+        <ActionButton
+          ariaLabel="View gallery"
           onClick={() => setActiveOverlay("gallery")}
         >
           <GalleryText />
-          <span className="action-btn__shimmer" aria-hidden="true" />
-        </button>
-        <button
-          className="action-btn"
-          aria-label="Get tickets on Fandango"
+        </ActionButton>
+        <ActionButton
+          ariaLabel="Get tickets on Fandango"
           onClick={() => window.open(FANDANGO_URL, "_blank")}
         >
           <GetTicketsText />
-          <span className="action-btn__shimmer" aria-hidden="true" />
-        </button>
+        </ActionButton>
       </div>
     </section>
   );
