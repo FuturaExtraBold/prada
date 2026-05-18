@@ -1,8 +1,13 @@
 import "./Pagination.css";
 
-export default function Pagination({ count, current, onChange }) {
+import { forwardRef } from "react";
+
+const Pagination = forwardRef(function Pagination(
+  { count, current, onChange },
+  ref,
+) {
   return (
-    <div className="pagination">
+    <div ref={ref} className="pagination">
       {Array.from({ length: count }, (_, i) => (
         <button
           key={i}
@@ -15,4 +20,6 @@ export default function Pagination({ count, current, onChange }) {
       ))}
     </div>
   );
-}
+});
+
+export default Pagination;

@@ -1,6 +1,7 @@
 import "./Gallery.css";
 
-import { useState } from "react";
+import { gsap } from "gsap";
+import { useRef, useState } from "react";
 
 import gallery01 from "../../assets/images-compressed/gallery/gallery-01.webp";
 import gallery02 from "../../assets/images-compressed/gallery/gallery-02.webp";
@@ -10,6 +11,11 @@ import gallery05 from "../../assets/images-compressed/gallery/gallery-05.webp";
 import gallery06 from "../../assets/images-compressed/gallery/gallery-06.webp";
 import gallery07 from "../../assets/images-compressed/gallery/gallery-07.webp";
 import gallery08 from "../../assets/images-compressed/gallery/gallery-08.webp";
+import videoGallery01 from "../../assets/video/gallery-01.mp4";
+import videoGallery02 from "../../assets/video/gallery-02.mp4";
+import videoGallery03 from "../../assets/video/gallery-03.mp4";
+import videoGallery04 from "../../assets/video/gallery-04.mp4";
+import useGalleryTimeline from "../../hooks/useGalleryTimeline";
 import Arrows from "./Arrows";
 import CloseButton from "./CloseButton";
 import Lockup from "./Lockup";
@@ -26,46 +32,86 @@ const images = [
   gallery08,
 ];
 
+const videos = [videoGallery01, videoGallery02, videoGallery03, videoGallery04];
+
 export default function Gallery({ type }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const frameRef = useRef(null);
+  const arrowsRef = useRef(null);
+  const paginationRef = useRef(null);
+  const closeRef = useRef(null);
+  const imageRef = useRef(null);
+  const lockupLogoRef = useRef(null);
+  const lockupNowPlayingRef = useRef(null);
+
   const isVideo = type === "video";
-  const count = isVideo ? 1 : images.length;
+  const items = isVideo ? videos : images;
+  const count = items.length;
+
+  useGalleryTimeline({
+    frameRef,
+    arrowsRef,
+    paginationRef,
+    closeRef,
+    imageRef,
+    lockupLogoRef,
+    lockupNowPlayingRef,
+    currentIndex,
+  });
+
+  function navigate(nextIndex) {
+    if (!imageRef.current) return setCurrentIndex(nextIndex);
+    gsap.to(imageRef.current, {
+      opacity: 0,
+      duration: 0.15,
+      ease: "none",
+      onComplete: () => setCurrentIndex(nextIndex),
+    });
+  }
 
   function handlePrev() {
-    setCurrentIndex((i) => (i - 1 + count) % count);
+    navigate((currentIndex - 1 + count) % count);
   }
 
   function handleNext() {
-    setCurrentIndex((i) => (i + 1) % count);
+    navigate((currentIndex + 1) % count);
   }
 
   return (
     <div className="gallery">
       <div className="gallery__unit">
-        <div
-          className={`gallery__frame${isVideo ? " gallery__frame--video" : ""}`}
-        >
+        <div ref={frameRef} className="gallery__frame">
           <div className="gallery__content">
             {isVideo ? (
-              <div className="gallery__video-stub">Video — stub</div>
+              <video
+                ref={imageRef}
+                key={currentIndex}
+                className="gallery__video"
+                src={videos[currentIndex]}
+                autoPlay
+                loop
+                playsInline
+              />
             ) : (
               <img
+                ref={imageRef}
                 className="gallery__image"
                 src={images[currentIndex]}
                 alt={`Gallery image ${currentIndex + 1}`}
               />
             )}
           </div>
-          <Arrows onPrev={handlePrev} onNext={handleNext} />
+          <Arrows ref={arrowsRef} onPrev={handlePrev} onNext={handleNext} />
           <Pagination
+            ref={paginationRef}
             count={count}
             current={currentIndex}
-            onChange={setCurrentIndex}
+            onChange={(i) => navigate(i)}
           />
-          <CloseButton />
+          <CloseButton ref={closeRef} />
         </div>
-        <Lockup />
+        <Lockup logoRef={lockupLogoRef} nowPlayingRef={lockupNowPlayingRef} />
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 import "./Arrows.css";
 
-export default function Arrows({ onPrev, onNext }) {
+import { forwardRef } from "react";
+
+const Arrows = forwardRef(function Arrows({ onPrev, onNext }, ref) {
   return (
-    <>
+    <div ref={ref} className="arrows">
       <button
         className="arrow arrow--prev"
         onClick={onPrev}
@@ -13,6 +15,8 @@ export default function Arrows({ onPrev, onNext }) {
       <button className="arrow arrow--next" onClick={onNext} aria-label="Next">
         <span className="arrow__triangle" />
       </button>
-    </>
+    </div>
   );
-}
+});
+
+export default Arrows;

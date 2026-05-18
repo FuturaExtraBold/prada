@@ -1,6 +1,6 @@
 import "./CreativeStage.css";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useUI } from "../../context/UIContext";
 import useIntroTimeline from "../../hooks/useIntroTimeline";
@@ -15,8 +15,18 @@ export default function CreativeStage() {
   const logoRef = useRef(null);
   const nowPlayingRef = useRef(null);
   const actionsRef = useRef(null);
+  const prevOverlay = useRef(activeOverlay);
 
-  useIntroTimeline({ frameRef, logoRef, nowPlayingRef, actionsRef });
+  const [replayKey, setReplayKey] = useState(0);
+
+  useEffect(() => {
+    if (prevOverlay.current !== null && activeOverlay === null) {
+      setReplayKey((k) => k + 1);
+    }
+    prevOverlay.current = activeOverlay;
+  }, [activeOverlay]);
+
+  useIntroTimeline({ frameRef, logoRef, nowPlayingRef, actionsRef, replayKey });
 
   return (
     <div className="creative-stage">

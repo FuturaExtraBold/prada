@@ -6,14 +6,15 @@ export default function useIntroTimeline({
   logoRef,
   nowPlayingRef,
   actionsRef,
+  replayKey = 0,
 }) {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
       tl.from(frameRef.current, {
-        y: -50,
-        scale: 1.4,
+        y: -10,
+        scale: 1.05,
         opacity: 0,
         duration: 1,
         delay: 0.4,
@@ -23,14 +24,17 @@ export default function useIntroTimeline({
           nowPlayingRef.current,
           { y: 20, opacity: 0, duration: 2 },
           "-=1.3",
-        )
-        .from(
+        );
+
+      if (replayKey === 0) {
+        tl.from(
           actionsRef.current.children,
           { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 },
           "-=1.8",
         );
+      }
     });
 
     return () => ctx.revert();
-  }, [frameRef, logoRef, nowPlayingRef, actionsRef]);
+  }, [frameRef, logoRef, nowPlayingRef, actionsRef, replayKey]);
 }

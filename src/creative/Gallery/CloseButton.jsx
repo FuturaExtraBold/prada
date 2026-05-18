@@ -1,13 +1,16 @@
 import "./CloseButton.css";
 
+import { forwardRef } from "react";
+
 import { useUI } from "../../context/UIContext";
 import { CloseX } from "../../lib/svgs";
 
-export default function CloseButton() {
+const CloseButton = forwardRef(function CloseButton(_props, ref) {
   const { setActiveOverlay } = useUI();
 
   return (
     <button
+      ref={ref}
       className="close-button"
       aria-label="Close"
       onClick={() => setActiveOverlay(null)}
@@ -15,4 +18,6 @@ export default function CloseButton() {
       <CloseX />
     </button>
   );
-}
+});
+
+export default CloseButton;
