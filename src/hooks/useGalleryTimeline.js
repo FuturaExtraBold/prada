@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function useGalleryTimeline({
+  backgroundRef,
   frameRef,
   arrowsRef,
   paginationRef,
@@ -11,37 +12,50 @@ export default function useGalleryTimeline({
   lockupNowPlayingRef,
   currentIndex,
 }) {
+  const isFirstMount = useRef(true);
+
   // Open animation — runs once on mount
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      tl.from(frameRef.current, {
-        y: -10,
-        scale: 1.05,
-        opacity: 0,
-        duration: 1,
-      })
+      // Background and frame animate in together
+      tl.from(backgroundRef.current, { y: 20, opacity: 0, duration: 1 }, "open")
         .from(
-          [arrowsRef.current.children, paginationRef.current.children],
-          { y: 10, opacity: 0, duration: 0.8 },
-          "<",
+          frameRef.current,
+          { y: -50, scale: 1.05, opacity: 0, duration: 1 },
+          "open",
         )
-        .from(closeRef.current, { opacity: 0, duration: 0.6 }, "<")
+        .from(
+          closeRef.current,
+          { y: -20, opacity: 0, duration: 0.6 },
+          "open+=0.5",
+        )
+        .from(
+          paginationRef.current.children,
+          { y: 20, opacity: 0, duration: 0.8, stagger: 0.04 },
+          "open+=0.6",
+        )
+        .from(
+          arrowsRef.current.children,
+          { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 },
+          "open+=0.6",
+        )
         .from(
           lockupLogoRef.current,
-          { y: 20, opacity: 0, duration: 1.2 },
-          "-=0.8",
+          { y: 20, opacity: 0, duration: 0.9 },
+          "open+=0.5",
         )
         .from(
           lockupNowPlayingRef.current,
-          { y: 20, opacity: 0, duration: 1.8 },
-          "-=1.1",
+          { y: 20, opacity: 0, duration: 1.2 },
+          "open+=0.6",
         );
     });
 
     return () => ctx.revert();
   }, [
+    backgroundRef,
     frameRef,
     arrowsRef,
     paginationRef,
@@ -50,8 +64,12 @@ export default function useGalleryTimeline({
     lockupNowPlayingRef,
   ]);
 
-  // Image in — runs on mount and every slide change
+  // Slide change animation — skips initial mount (handled by open timeline above)
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
     if (!imageRef.current) return;
 
     const ctx = gsap.context(() => {

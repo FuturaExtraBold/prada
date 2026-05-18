@@ -1,6 +1,7 @@
 import "./CreativeStage.css";
 
-import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 import { useUI } from "../../context/UIContext";
 import useIntroTimeline from "../../hooks/useIntroTimeline";
@@ -9,24 +10,22 @@ import ContentArea from "../ContentArea/ContentArea";
 import Overlay from "../Overlay/Overlay";
 
 export default function CreativeStage() {
-  const { activeOverlay } = useUI();
+  const { activeOverlay, introKey } = useUI();
 
   const frameRef = useRef(null);
   const logoRef = useRef(null);
   const nowPlayingRef = useRef(null);
   const actionsRef = useRef(null);
-  const prevOverlay = useRef(activeOverlay);
-
-  const [replayKey, setReplayKey] = useState(0);
 
   useEffect(() => {
-    if (prevOverlay.current !== null && activeOverlay === null) {
-      setReplayKey((k) => k + 1);
-    }
-    prevOverlay.current = activeOverlay;
+    if (activeOverlay === null) return;
+    gsap.killTweensOf([frameRef.current, logoRef.current, nowPlayingRef.current]);
+    gsap.to(frameRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
+    gsap.to(logoRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
+    gsap.to(nowPlayingRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
   }, [activeOverlay]);
 
-  useIntroTimeline({ frameRef, logoRef, nowPlayingRef, actionsRef, replayKey });
+  useIntroTimeline({ frameRef, logoRef, nowPlayingRef, actionsRef, replayKey: introKey });
 
   return (
     <div className="creative-stage">

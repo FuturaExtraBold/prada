@@ -3,6 +3,7 @@ import "./Gallery.css";
 import { gsap } from "gsap";
 import { useRef, useState } from "react";
 
+import { useUI } from "../../context/UIContext";
 import gallery01 from "../../assets/images-compressed/gallery/gallery-01.webp";
 import gallery02 from "../../assets/images-compressed/gallery/gallery-02.webp";
 import gallery03 from "../../assets/images-compressed/gallery/gallery-03.webp";
@@ -34,9 +35,11 @@ const images = [
 
 const videos = [videoGallery01, videoGallery02, videoGallery03, videoGallery04];
 
-export default function Gallery({ type }) {
+export default function Gallery({ type, backgroundRef }) {
+  const { setActiveOverlay, triggerIntroReplay } = useUI();
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const galleryRef = useRef(null);
   const frameRef = useRef(null);
   const arrowsRef = useRef(null);
   const paginationRef = useRef(null);
@@ -50,6 +53,7 @@ export default function Gallery({ type }) {
   const count = items.length;
 
   useGalleryTimeline({
+    backgroundRef,
     frameRef,
     arrowsRef,
     paginationRef,
@@ -70,6 +74,17 @@ export default function Gallery({ type }) {
     });
   }
 
+  function handleClose() {
+    triggerIntroReplay();
+    gsap.to([galleryRef.current, backgroundRef.current], {
+      y: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.inOut",
+      onComplete: () => setActiveOverlay(null),
+    });
+  }
+
   function handlePrev() {
     navigate((currentIndex - 1 + count) % count);
   }
@@ -79,7 +94,7 @@ export default function Gallery({ type }) {
   }
 
   return (
-    <div className="gallery">
+    <div ref={galleryRef} className="gallery">
       <div className="gallery__unit">
         <div ref={frameRef} className="gallery__frame">
           <div className="gallery__content">
@@ -109,7 +124,7 @@ export default function Gallery({ type }) {
             current={currentIndex}
             onChange={(i) => navigate(i)}
           />
-          <CloseButton ref={closeRef} />
+          <CloseButton ref={closeRef} onClose={handleClose} />
         </div>
         <Lockup logoRef={lockupLogoRef} nowPlayingRef={lockupNowPlayingRef} />
       </div>
