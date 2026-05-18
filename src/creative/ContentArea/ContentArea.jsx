@@ -2,6 +2,7 @@ import "./ContentArea.css";
 
 import { forwardRef } from "react";
 
+import layoutImage from "../../assets/images-compressed/layout.webp";
 import ContentDetail from "./ContentDetail";
 
 const ContentArea = forwardRef(function ContentArea(
@@ -10,7 +11,13 @@ const ContentArea = forwardRef(function ContentArea(
 ) {
   return (
     <section className="content-area">
-      <div className="content-area__background" aria-hidden="true" />
+      <img
+        className="content-area__background"
+        src={layoutImage}
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+      />
       <div className="content-area__workable">
         <ContentDetail
           frameRef={frameRef}

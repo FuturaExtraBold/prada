@@ -16,10 +16,6 @@
   display: block;
   width: var(--bg-width);
   height: var(--bg-height);
-  background-image: url("../../assets/images-compressed/layout.webp");
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: contain;
   pointer-events: none;
   transform: translateX(-50%);
 }

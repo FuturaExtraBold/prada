@@ -11,6 +11,8 @@ export default function BigGreyBox() {
           src={chromeBody}
           alt=""
           aria-hidden="true"
+          width="1280"
+          height="1206"
         />
       </div>
     </section>

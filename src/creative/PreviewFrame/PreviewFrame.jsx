@@ -28,7 +28,7 @@ const PreviewFrame = forwardRef(function PreviewFrame(_props, ref) {
         playsInline
       />
       {muted && (
-        <div className="preview-frame__unmute" aria-label="Click to unmute">
+        <div className="preview-frame__unmute" aria-hidden="true">
           <MuteIcon />
         </div>
       )}
