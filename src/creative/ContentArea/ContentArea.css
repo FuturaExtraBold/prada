@@ -15,7 +15,7 @@
   left: 50%;
   display: block;
   width: var(--bg-width);
-  height: var(--bg-height);
+  height: auto;
   pointer-events: none;
   transform: translateX(-50%);
 }
