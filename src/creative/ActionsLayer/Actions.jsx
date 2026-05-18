@@ -3,6 +3,7 @@ import "./Actions.css";
 import { forwardRef } from "react";
 
 import { useUI } from "../../context/UIContext";
+import useButtonShimmer from "../../hooks/useButtonShimmer";
 import { GalleryText, GetTicketsText, VideoText } from "../../lib/svgs";
 
 const FANDANGO_URL =
@@ -10,6 +11,8 @@ const FANDANGO_URL =
 
 const Actions = forwardRef(function Actions(_props, ref) {
   const { setActiveOverlay } = useUI();
+
+  useButtonShimmer(ref);
 
   return (
     <section className="actions">
@@ -20,6 +23,7 @@ const Actions = forwardRef(function Actions(_props, ref) {
           onClick={() => setActiveOverlay("video")}
         >
           <VideoText />
+          <span className="action-btn__shimmer" aria-hidden="true" />
         </button>
         <button
           className="action-btn"
@@ -27,6 +31,7 @@ const Actions = forwardRef(function Actions(_props, ref) {
           onClick={() => setActiveOverlay("gallery")}
         >
           <GalleryText />
+          <span className="action-btn__shimmer" aria-hidden="true" />
         </button>
         <button
           className="action-btn"
@@ -34,6 +39,7 @@ const Actions = forwardRef(function Actions(_props, ref) {
           onClick={() => window.open(FANDANGO_URL, "_blank")}
         >
           <GetTicketsText />
+          <span className="action-btn__shimmer" aria-hidden="true" />
         </button>
       </div>
     </section>

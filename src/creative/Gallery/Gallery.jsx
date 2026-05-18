@@ -3,7 +3,6 @@ import "./Gallery.css";
 import { gsap } from "gsap";
 import { useRef, useState } from "react";
 
-import { useUI } from "../../context/UIContext";
 import gallery01 from "../../assets/images-compressed/gallery/gallery-01.webp";
 import gallery02 from "../../assets/images-compressed/gallery/gallery-02.webp";
 import gallery03 from "../../assets/images-compressed/gallery/gallery-03.webp";
@@ -16,6 +15,7 @@ import videoGallery01 from "../../assets/video/gallery-01.mp4";
 import videoGallery02 from "../../assets/video/gallery-02.mp4";
 import videoGallery03 from "../../assets/video/gallery-03.mp4";
 import videoGallery04 from "../../assets/video/gallery-04.mp4";
+import { useUI } from "../../context/UIContext";
 import useGalleryTimeline from "../../hooks/useGalleryTimeline";
 import Arrows from "./Arrows";
 import CloseButton from "./CloseButton";

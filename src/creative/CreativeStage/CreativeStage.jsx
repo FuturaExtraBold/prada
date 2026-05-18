@@ -19,13 +19,31 @@ export default function CreativeStage() {
 
   useEffect(() => {
     if (activeOverlay === null) return;
-    gsap.killTweensOf([frameRef.current, logoRef.current, nowPlayingRef.current]);
-    gsap.to(frameRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
+    gsap.killTweensOf([
+      frameRef.current,
+      logoRef.current,
+      nowPlayingRef.current,
+    ]);
+    gsap.to(frameRef.current, {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out",
+    });
     gsap.to(logoRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
-    gsap.to(nowPlayingRef.current, { opacity: 0, duration: 0.4, ease: "power2.out" });
+    gsap.to(nowPlayingRef.current, {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.out",
+    });
   }, [activeOverlay]);
 
-  useIntroTimeline({ frameRef, logoRef, nowPlayingRef, actionsRef, replayKey: introKey });
+  useIntroTimeline({
+    frameRef,
+    logoRef,
+    nowPlayingRef,
+    actionsRef,
+    replayKey: introKey,
+  });
 
   return (
     <div className="creative-stage">

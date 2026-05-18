@@ -9,7 +9,11 @@ export default function Overlay({ type }) {
 
   return (
     <div className="overlay">
-      <div ref={backgroundRef} className="overlay__background" aria-hidden="true" />
+      <div
+        ref={backgroundRef}
+        className="overlay__background"
+        aria-hidden="true"
+      />
       <Gallery type={type} backgroundRef={backgroundRef} />
     </div>
   );
