@@ -1,7 +1,7 @@
 import "./Gallery.css";
 
 import { gsap } from "gsap";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import gallery01 from "../../assets/images-compressed/gallery/gallery-01.webp";
 import gallery02 from "../../assets/images-compressed/gallery/gallery-02.webp";
@@ -51,6 +51,10 @@ export default function Gallery({ type, backgroundRef }) {
   const isVideo = type === "video";
   const items = isVideo ? videos : images;
   const count = items.length;
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [type]);
 
   useGalleryTimeline({
     backgroundRef,
