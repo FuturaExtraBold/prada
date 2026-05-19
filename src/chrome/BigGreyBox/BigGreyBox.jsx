@@ -1,6 +1,6 @@
 import "./BigGreyBox.css";
 
-import chromeBody from "../../assets/images-compressed/chrome-body-small.webp";
+import chromeBody from "../../assets/images-compressed/chrome-body.webp";
 import HalfPage from "../HalfPage/HalfPage";
 
 export default function BigGreyBox() {
