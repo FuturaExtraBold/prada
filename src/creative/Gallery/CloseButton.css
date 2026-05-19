@@ -2,8 +2,6 @@
   position: absolute;
   z-index: var(--z-unit);
   top: -24px;
-
-  /* right: 20px; */
   left: 100%;
   display: flex;
   align-items: center;

@@ -1,5 +1,25 @@
 .gallery {
   position: absolute;
+  z-index: var(--z-overlay);
+  inset: 0;
+}
+
+.gallery__background {
+  position: absolute;
+  top: var(--bg-offset-top);
+  left: 50%;
+  width: var(--bg-width);
+  height: var(--bg-height);
+  background-image: url("../../assets/images-compressed/layout-gallery.webp");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.gallery__body {
+  position: absolute;
   display: flex;
   align-items: flex-start;
   justify-content: center;

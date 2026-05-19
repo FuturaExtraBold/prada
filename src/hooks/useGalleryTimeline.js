@@ -14,12 +14,10 @@ export default function useGalleryTimeline({
 }) {
   const isFirstMount = useRef(true);
 
-  // Open animation — runs once on mount
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      // Background and frame animate in together
       tl.from(backgroundRef.current, { y: 20, opacity: 0, duration: 1 }, "open")
         .from(
           frameRef.current,
@@ -64,7 +62,6 @@ export default function useGalleryTimeline({
     lockupNowPlayingRef,
   ]);
 
-  // Slide change animation — skips initial mount (handled by open timeline above)
   useEffect(() => {
     if (isFirstMount.current) {
       isFirstMount.current = false;

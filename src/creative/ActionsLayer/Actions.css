@@ -1,19 +1,15 @@
 .actions {
   position: absolute;
-  right: 0;
-  bottom: 42px;
-  left: 0;
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+  z-index: var(--z-actions);
+  inset: 0;
   pointer-events: none;
 }
 
 .actions__container {
+  position: absolute;
+  right: calc((100% - var(--workable-width)) / 2 + var(--content-margin-right));
+  bottom: 42px;
   display: flex;
-  width: 494px;
-  justify-content: center;
-  margin-right: var(--content-margin-right);
   gap: 8px;
   pointer-events: all;
 }

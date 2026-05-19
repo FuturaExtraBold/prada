@@ -10,6 +10,19 @@ export default function useIntroTimeline({
 }) {
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (replayKey === 0) {
+        gsap.set(
+          [
+            frameRef.current,
+            logoRef.current,
+            nowPlayingRef.current,
+            ...actionsRef.current.children,
+          ],
+          { opacity: 0 },
+        );
+        return;
+      }
+
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
       tl.fromTo(
@@ -37,10 +50,8 @@ export default function useIntroTimeline({
           { y: 0, opacity: 1, duration: 0.8, stagger: 0.1 },
           "-=1.8",
         );
-      } else if (replayKey > 1) {
-        gsap.set(actionsRef.current.children, { y: 0, opacity: 1 });
       } else {
-        gsap.set(actionsRef.current.children, { opacity: 0 });
+        gsap.set(actionsRef.current.children, { y: 0, opacity: 1 });
       }
     });
 

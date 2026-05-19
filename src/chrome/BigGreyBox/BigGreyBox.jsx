@@ -1,7 +1,7 @@
 import "./BigGreyBox.css";
 
 import chromeBody from "../../assets/images-compressed/chrome-body.webp";
-import TallAd from "../TallAd/TallAd";
+import HalfPage from "../HalfPage/HalfPage";
 
 export default function BigGreyBox() {
   return (
@@ -15,7 +15,7 @@ export default function BigGreyBox() {
           width="1280"
           height="1206"
         />
-        <TallAd />
+        <HalfPage />
       </div>
     </section>
   );

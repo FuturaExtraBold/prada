@@ -1,15 +1,10 @@
 import "./ContentDetail.css";
 
-import { forwardRef } from "react";
-
 import logoImage from "../../assets/images-compressed/lockup.webp";
 import { NowPlayingTagline } from "../../lib/svgs";
 import PreviewFrame from "../PreviewFrame/PreviewFrame";
 
-const ContentDetail = forwardRef(function ContentDetail(
-  { frameRef, logoRef, nowPlayingRef },
-  _ref,
-) {
+export default function ContentDetail({ frameRef, logoRef, nowPlayingRef }) {
   return (
     <section className="content-detail">
       <PreviewFrame ref={frameRef} />
@@ -26,6 +21,4 @@ const ContentDetail = forwardRef(function ContentDetail(
       </div>
     </section>
   );
-});
-
-export default ContentDetail;
+}

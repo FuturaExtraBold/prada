@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react";
 
 import { useUI } from "../../context/UIContext";
 import useIntroTimeline from "../../hooks/useIntroTimeline";
-import ActionsLayer from "../ActionsLayer/ActionsLayer";
+import Actions from "../ActionsLayer/Actions";
 import ContentArea from "../ContentArea/ContentArea";
-import Overlay from "../Overlay/Overlay";
+import Gallery from "../Gallery/Gallery";
 
 export default function CreativeStage() {
   const { activeOverlay, introKey } = useUI();
@@ -52,8 +52,8 @@ export default function CreativeStage() {
         logoRef={logoRef}
         nowPlayingRef={nowPlayingRef}
       />
-      {activeOverlay && <Overlay type={activeOverlay} />}
-      <ActionsLayer ref={actionsRef} />
+      {activeOverlay && <Gallery type={activeOverlay} />}
+      <Actions ref={actionsRef} />
     </div>
   );
 }

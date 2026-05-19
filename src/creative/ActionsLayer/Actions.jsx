@@ -5,10 +5,8 @@ import { forwardRef } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { useUI } from "../../context/UIContext";
 import useButtonShimmer from "../../hooks/useButtonShimmer";
+import { FANDANGO_URL } from "../../lib/constants";
 import { GalleryText, GetTicketsText, VideoText } from "../../lib/svgs";
-
-const FANDANGO_URL =
-  "https://www.fandango.com/the-devil-wears-prada-2-2026-243909/movie-overview";
 
 const Actions = forwardRef(function Actions(_props, ref) {
   const { setActiveOverlay } = useUI();
@@ -16,7 +14,7 @@ const Actions = forwardRef(function Actions(_props, ref) {
   useButtonShimmer(ref);
 
   return (
-    <section className="actions">
+    <div className="actions">
       <div ref={ref} className="actions__container">
         <ActionButton
           ariaLabel="Watch video"
@@ -37,7 +35,7 @@ const Actions = forwardRef(function Actions(_props, ref) {
           <GetTicketsText />
         </ActionButton>
       </div>
-    </section>
+    </div>
   );
 });
 

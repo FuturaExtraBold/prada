@@ -7,10 +7,8 @@ import splashSrc from "../../assets/video/splash.mp4";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { useUI } from "../../context/UIContext";
 import useButtonShimmer from "../../hooks/useButtonShimmer";
+import { FANDANGO_URL } from "../../lib/constants";
 import { GetTicketsText, SkipIntroText } from "../../lib/svgs";
-
-const FANDANGO_URL =
-  "https://www.fandango.com/the-devil-wears-prada-2-2026-243909/movie-overview";
 
 export default function Splash() {
   const [done, setDone] = useState(false);

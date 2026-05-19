@@ -6,28 +6,18 @@ export default function ActionButton({
   href,
   ariaLabel,
   small,
+  ...rest
 }) {
+  const Tag = href ? "a" : "button";
   const className = `action-btn${small ? " action-btn--small" : ""}`;
-
-  if (href) {
-    return (
-      <a
-        className={className}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={ariaLabel}
-      >
-        {children}
-        <span className="action-btn__shimmer" aria-hidden="true" />
-      </a>
-    );
-  }
+  const tagProps = href
+    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    : { onClick };
 
   return (
-    <button className={className} aria-label={ariaLabel} onClick={onClick}>
+    <Tag className={className} aria-label={ariaLabel} {...tagProps} {...rest}>
       {children}
       <span className="action-btn__shimmer" aria-hidden="true" />
-    </button>
+    </Tag>
   );
 }

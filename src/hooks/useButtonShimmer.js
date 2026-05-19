@@ -6,7 +6,7 @@ export default function useButtonShimmer(containerRef) {
     const sel = gsap.utils.selector(containerRef);
     const shimmers = sel(".action-btn__shimmer");
 
-    gsap.fromTo(
+    const tweens = gsap.fromTo(
       shimmers,
       { x: "-150%" },
       {
@@ -18,5 +18,7 @@ export default function useButtonShimmer(containerRef) {
         stagger: 0.125,
       },
     );
+
+    return () => tweens.kill();
   }, [containerRef]);
 }

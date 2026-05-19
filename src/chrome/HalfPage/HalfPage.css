@@ -1,4 +1,4 @@
-.tall-ad {
+.half-page {
   position: absolute;
   top: 504px;
   right: 56px;
@@ -7,23 +7,28 @@
   cursor: pointer;
 }
 
-.tall-ad__poster {
+.half-page__poster {
   display: block;
   width: 300px;
   height: 600px;
 }
 
-.tall-ad__video {
+.half-page__video {
   position: absolute;
   width: 100%;
   height: 100%;
   inset: 0;
   object-fit: cover;
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-.tall-ad__btn-wrap {
+.half-page__video--visible {
+  opacity: 1;
+}
+
+.half-page__btn-wrap {
   position: absolute;
   bottom: 10px;
   left: 50%;

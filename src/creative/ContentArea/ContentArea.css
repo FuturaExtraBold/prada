@@ -25,6 +25,6 @@
   z-index: 1;
   display: flex;
   width: min(100%, var(--workable-width));
-  height: var(--workable-height);
+  height: var(--content-height);
   justify-content: flex-end;
 }

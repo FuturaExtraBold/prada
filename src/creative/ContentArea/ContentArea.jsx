@@ -1,14 +1,9 @@
 import "./ContentArea.css";
 
-import { forwardRef } from "react";
-
 import layoutImage from "../../assets/images-compressed/layout.webp";
 import ContentDetail from "./ContentDetail";
 
-const ContentArea = forwardRef(function ContentArea(
-  { frameRef, logoRef, nowPlayingRef },
-  _ref,
-) {
+export default function ContentArea({ frameRef, logoRef, nowPlayingRef }) {
   return (
     <section className="content-area">
       <img
@@ -29,6 +24,4 @@ const ContentArea = forwardRef(function ContentArea(
       </div>
     </section>
   );
-});
-
-export default ContentArea;
+}

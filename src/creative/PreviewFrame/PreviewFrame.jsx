@@ -45,12 +45,11 @@ const PreviewFrame = forwardRef(function PreviewFrame(_props, ref) {
         preload="none"
       />
       <img
-        className="preview-frame__icon"
+        className={`preview-frame__icon${muted ? "" : " preview-frame__icon--hidden"}`}
         src={replayIcon}
         alt="Click to replay with audio"
         width="128"
         height="128"
-        style={{ opacity: muted ? 1 : 0 }}
       />
     </section>
   );
