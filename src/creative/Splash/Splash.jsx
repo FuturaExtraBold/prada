@@ -38,6 +38,8 @@ export default function Splash() {
       <video
         className="splash__video"
         src={splashSrc}
+        width="1920"
+        height="1000"
         autoPlay
         muted
         playsInline

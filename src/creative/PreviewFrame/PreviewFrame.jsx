@@ -8,7 +8,7 @@ import trailerSrc from "../../assets/video/trailer.mp4";
 import { useUI } from "../../context/UIContext";
 
 const PreviewFrame = forwardRef(function PreviewFrame(_props, ref) {
-  const { activeOverlay } = useUI();
+  const { activeOverlay, introKey } = useUI();
   const [muted, setMuted] = useState(true);
   const videoRef = useRef(null);
 
@@ -36,7 +36,7 @@ const PreviewFrame = forwardRef(function PreviewFrame(_props, ref) {
       <video
         ref={videoRef}
         className="preview-frame__trailer"
-        src={trailerSrc}
+        src={introKey > 0 ? trailerSrc : undefined}
         poster={imagePoster}
         autoPlay
         muted
